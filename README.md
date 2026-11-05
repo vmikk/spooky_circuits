@@ -4,9 +4,9 @@ A collection of DIY Halloween decoration projects (powered mostly by Raspberry P
 
 | Project | Board | What it does |
 |---|---|---|
-| [👻 Ghost (2026)] | Waveshare RP2040-Zero | NeoPixel ghost with a PIR-triggered jump-scare |
-| [🐈‍⬛ Halloween cats (2025)] | Raspberry Pi Pico | Three cat silhouettes with glowing LED eyes |
-| [🎃 Pumpkin Jack (2024)] | YD-RP2040 | Pumpkin with LED-matrix eyes and inner NeoPixel glow |
+| 👻 Ghost (2026) | Waveshare RP2040-Zero | NeoPixel ghost with a PIR-triggered jump-scare |
+| 🐈‍⬛ Halloween cats (2025) | Raspberry Pi Pico | Three cat silhouettes with glowing LED eyes |
+| 🎃 Pumpkin Jack (2024) | YD-RP2040 | Pumpkin with LED-matrix eyes and inner NeoPixel glow |
 
 ## Common setup
 
