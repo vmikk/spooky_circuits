@@ -20,3 +20,7 @@ All projects run on [CircuitPython](https://circuitpython.org/) 10.x on an RP204
 NeoPixel rings and MAX7219 matrices take 5 V from the board's `5V`/`VBUS` pin. Connect all grounds together.
 The brightness settings in each script also limit how much current the LEDs draw.
 
+---
+
+## 👻 Ghost (2026)
+
