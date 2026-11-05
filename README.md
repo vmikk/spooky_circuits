@@ -106,5 +106,42 @@ If you wire the LEDs to sink current from 3V3 instead (anode to 3V3, cathode -> 
   - `GAMMA`
   - `PWM_FREQUENCY`
   - per-cat effect parameters (breathing period/phase, blink interval, lightning cooldown) in `main()`
-- `misc/` contains earlier versions of the script and idea images.
 
+---
+
+## 🎃 Pumpkin Jack (2024)
+
+<img src="pics/jack_2024.gif" alt="Pumpkin Jack" width="400">
+
+Script: [`pumpkin_Jack_2024/combined_eyes_and_neopixels.py`](pumpkin_Jack_2024/combined_eyes_and_neopixels.py)
+
+A pumpkin with two 8x8 LED-matrix eyes that blink and glance around.
+There are three eye styles: `"round"`, `"evil"`, or `"round,evil"`, which switches between the two after a few blinks.
+Inside the pumpkin, two NeoPixel rings add the glow: one slowly cycles through the rainbow and the other breathes green.
+
+### Hardware
+
+- YD-RP2040 (the script turns off its onboard NeoPixel on GP23)
+- 2x MAX7219 8×8 LED matrix modules: the eyes
+- 2x 12-LED WS2812 (NeoPixel) rings
+
+### Wiring
+
+The two matrices share the SPI clock and data lines, and each has its own chip-select:
+
+| YD-RP2040 | Connects to |
+|---|---|
+| GP2 | `CLK` of both matrices |
+| GP3 | `DIN` of both matrices |
+| GP5 | `CS` of left-eye matrix |
+| GP6 | `CS` of right-eye matrix |
+| GP28 | DIN of NeoPixel ring 1 (rainbow background outside) |
+| GP29 | DIN of NeoPixel ring 2 (breathing green inside the head) |
+| 5V | VCC of both matrices and both rings |
+| GND | GND of both matrices and both rings |
+
+### Software
+
+- Libraries: `adafruit_max7219`, `adafruit_framebuf`, `adafruit_bus_device`, `neopixel`, `asyncio`, `adafruit_ticks` (`rainbowio` is built in)
+- Settings: `EYE_MODE`, NeoPixel `brightness`, `num_pixels`
+- [`tuple_vs_uint64.py`](pumpkin_Jack_2024/tuple_vs_uint64.py) is a desktop helper that converts eye frames between Python tuples and the `uint64` format used by the [LED Matrix Editor](https://xantorohara.github.io/led-matrix-editor/). It can also mirror frames horizontally.
