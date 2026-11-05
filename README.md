@@ -24,7 +24,7 @@ The brightness settings in each script also limit how much current the LEDs draw
 
 ## 👻 Ghost (2026)
 
-![Halloween ghost](pics/ghost_2026.jpg)
+<img src="pics/ghost_2026.jpg" alt="Halloween ghost" width="400">
 
 Script: [`ghost_2026/code.py`](ghost_2026/code.py)
 
